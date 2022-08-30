@@ -1,0 +1,79 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="pl" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Witaj w Skleppiku</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"-->
+<!--          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="-->
+<!--          crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+<!--    <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <img src="../static/sklepik.jpg" th:src="@{/sklepik.jpg}" alt="Logo sklepu">-->
+<!--    <p>Bezpieczne i pewne zakupy.</p>-->
+<!--</header>-->
+<!--<main>-->
+<!--    <h2>Lista produktów</h2>-->
+
+<!--    <ul th:remove="all-but-first">-->
+<!--        <li th:each="product: ${products}">-->
+<!--            <a href="#"-->
+<!--               th:href="@{|/product?id=${product.id}|}"-->
+<!--               th:text="|${product.name} ${product.price}zł|">-->
+<!--                Telewizor 2499zł-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#">-->
+<!--                Radio 999zł-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#">-->
+<!--                Smartfon 1799zł-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</main>-->
+<!--<footer>-->
+<!--    <p class="footer">Skleppik - all rights reserved</p>-->
+<!--</footer>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<!--<head th:replace="fragments :: head"></head>-->
+<head th:replace="fragments :: head(title='Witaj w Skleppiku')"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<main>
+    <h2>Lista produktów</h2>
+
+    <ul th:remove="all-but-first">
+        <li th:each="product: ${products}">
+            <a href="#"
+               th:href="@{|/product?id=${product.id}|}"
+               th:text="|${product.name} ${product.price}zł|">
+                Telewizor 2499zł
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Radio 999zł
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Smartfon 1799zł
+            </a>
+        </li>
+    </ul>
+
+
+</main>
+<div class="hexagon"><a th:href="@{/hexagon}" target="">        HEXAGON PAGE</a>
+</div>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

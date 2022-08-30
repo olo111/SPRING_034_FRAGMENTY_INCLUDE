@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<!--<head th:replace="fragments :: head"></head>-->
+<head th:replace="fragments :: head(title=|${product.name} w Skleppiku|)"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<main>
+    <h2>Informacje o produkcie</h2>
+    <p th:text="|Nazwa: ${product.name}|">Nazwa: Telewizor</p>
+    <p>
+        <i class="fas fa-tv fa-10x product-icon" th:class="|fas fa-10x product-icon fa-${product.icon}|"></i>
+    </p>
+    <p th:text="|Cena: ${product.price}zł|">Cena: 2499zł</p>
+    <p th:text="|Opis: ${product.description}|">
+        Opis: Znakomity telewizor Oled z dźwiękiem przestrzennym i niesamowitymi kolorami
+    </p>
+</main>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="pl" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title th:text="|${product.name} w Skleppiku|">Telewizor w Skleppiku</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"-->
+<!--          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="-->
+<!--          crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+<!--    <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <img src="../static/sklepik.jpg" th:src="@{/sklepik.jpg}" alt="Logo sklepu">-->
+<!--    <p>Bezpieczne i pewne zakupy.</p>-->
+<!--</header>-->
+<!--<main>-->
+<!--    <h2>Informacje o produkcie</h2>-->
+<!--    <p th:text="|Nazwa: ${product.name}|">Nazwa: Telewizor</p>-->
+<!--    <p>-->
+<!--        <i class="fas fa-tv fa-10x product-icon" th:class="|fas fa-10x product-icon fa-${product.icon}|"></i>-->
+<!--    </p>-->
+<!--    <p th:text="|Cena: ${product.price}zł|">Cena: 2499zł</p>-->
+<!--    <p th:text="|Opis: ${product.description}|">-->
+<!--        Opis: Znakomity telewizor Oled z dźwiękiem przestrzennym i niesamowitymi kolorami-->
+<!--    </p>-->
+<!--</main>-->
+<!--<footer>-->
+<!--    <p class="footer">Skleppik - all rights reserved</p>-->
+<!--</footer>-->
+<!--</body>-->
+<!--</html>-->
